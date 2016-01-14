@@ -6,7 +6,7 @@ def initialize(x, y, direction)
   @x = x.to_i
   @y = y.to_i
   @direction = direction
-end #end initialize
+end #end initialize method
 
 
 def move #depending on current position update coordinates
@@ -22,7 +22,7 @@ def move #depending on current position update coordinates
   end
 end
 
-def turn_rover(turn)
+def turn_rover(turn) #determining what direction the rover is now facing 
   case @direction
   when "N"
     turn == "R" ? @direction = "E" : @direction = "W"
@@ -57,16 +57,10 @@ rover1 = Rover.new(initial_location[0], initial_location[1], initial_location[2]
       rover1.turn
     else x == "M"
       rover1.move
-    # else puts "Please enter valid letter to make your rover go where you want it to!"
     end
     puts "#{rover1.x} #{rover1.y} #{rover1.direction}"
   end
 
-  # puts "What is the initial location of your second rover (6,6,M)?"
-  # initial_location2 = gets.chomp.split(" ")
-  #
-  # puts "Where do you want your second rover to move? Ex. LLRRM"
-  # move_2 = gets.chomp
 
   def read_instruction2
 
@@ -88,7 +82,6 @@ rover1 = Rover.new(initial_location[0], initial_location[1], initial_location[2]
         rover2.turn
       else x == "M"
         rover2.move
-      # else puts "Please enter valid letter to make your rover go where you want it to!"
       end
 
       puts "#{rover2.x} #{rover2.y} #{rover2.direction}"
