@@ -20,8 +20,13 @@ class Instructor < Person
     "Everything in Ruby is an Object"
   end
 end
+end 
 
-chris = Student.new
+chris = Instructor.new
 chris.greeting
 
-end
+christina = Student.new
+christina.greeting
+
+chris.teach
+christina.learn
