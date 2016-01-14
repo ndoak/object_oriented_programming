@@ -1,32 +1,34 @@
 class Person
-  attr_accessor : name
+  attr_accessor :name
 
-  def initialize(first_name)
-    @first_name = first_name
+  def initialize(name)
+    @name = name
   end
 
   def greeting
-    "Hi, my name is #{name}"
+  puts  "Hi, my name is #{name}"
   end
+end
 
 class Student < Person
   def learn
-    "I get it!"
+  puts  "I get it!"
   end
 end
 
 class Instructor < Person
   def teach
-    "Everything in Ruby is an Object"
+  puts  "Everything in Ruby is an Object"
   end
 end
-end 
 
-chris = Instructor.new
+
+chris = Instructor.new("Chris")
 chris.greeting
 
-christina = Student.new
+christina = Student.new("Christina")
 christina.greeting
 
 chris.teach
 christina.learn
+christina.teach # won't work because teach and learn are instance methods
