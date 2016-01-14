@@ -12,34 +12,32 @@ def initialize(x,y, direction)
 end #end initialize
 
 
-
 def move #depending on current position update coordinates
 
-case move(@direction)
+case @direction
 
-when @direction =="N"
-  then @y += 1
-when @direction == "E"
-  then @x += 1
-
-when @direction == "W"
-  then @x -= 1
-
-when @direction == "S"
-  then @y -= 1
+when "N"
+  @y += 1
+when "E"
+   @x += 1
+when "W"
+  @x -= 1
+when "S"
+ @y -= 1
 
 end
 
-
-def turn
-  case direction(turn)
-  if left == "L"
-
-  when turn == "R"
-  when turn == "M"
-
-end
-
+def turn_rover(turn)
+  case @direction
+  when "N"
+    turn == "R" ? @direction = "E" : @direction = "W"
+  when "E"
+    turn == "R" ? @direction = "S" : @direction = "N"
+  when "S"
+    turn == "R" ? @direction = "W" : @direction = "E"
+  when "W"
+    turn == "R" ? @direction = "N" : @direction = "S"
+  end
 
 end #end Rover
 
@@ -53,6 +51,8 @@ def read_instruction
 
   puts "Where do you want your first rover to move? Ex. LLRRMM"
   move1 = gets.chomp.split(" ")
+
+  #do block for rover
 
   puts "What is the initial location of your second rover (6,6,M)?"
   initial_location2 = gets.chomp.split(" ")
